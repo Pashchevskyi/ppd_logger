@@ -12,7 +12,7 @@ To install this library go to directory with pom.xml file and run the following 
 
     mvn clean install
 
-Meaning of options in "application.properties" file.
+Meaning of options in "application.properties" file
 
 log.file.format=<regular_expression> - regular expression, according to which data in log file store
 log.file.max_size=<size_in_bytes> - maximum size of log file. If file becomes bigger, the new log
@@ -20,5 +20,22 @@ file will be created, which name will be like "log-YYYY-MM-DD_HHMMSS.txt" (initi
 "log.txt" by default). YYYY-MM-DD_HHMMSS is date and time of new log file creation
 log.file.path=./log/log.txt - path to log file in your project, counting from directory with pom.xml 
 log.file.level=info - logging level. May be DEBUG, ERROR, WARN, TRACE or INFO
+
+Adding of dependency to Maven ("pom.xml" file)
+
+<dependency>
+    <groupId>ua.ithillel.lms</groupId>
+    <artifactId>ppd_logger</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+
+Usage
+
+LoggerConfigurationLoader lcl = new FileLoggerConfigurationLoader();
+LoggerConfiguration lc = lcl.load("./src/main/resources/application.properties");
+Logger l = new FileLogger((FileLoggerConfiguration) lc);
+l.error("ERROR: Some error");
+l.info("Some information");
+// ...
 
 Enjoy.
