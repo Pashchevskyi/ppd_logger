@@ -3,7 +3,6 @@ package ua.ithillel.lms.logger.console;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import ua.ithillel.lms.logger.Logger;
-import ua.ithillel.lms.logger.LoggerConfiguration;
 
 public class ConsoleLogger extends Logger {
 
