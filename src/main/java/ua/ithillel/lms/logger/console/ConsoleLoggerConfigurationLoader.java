@@ -17,7 +17,7 @@ public class ConsoleLoggerConfigurationLoader extends LoggerConfigurationLoader 
   @Override
   public LoggerConfiguration load(String path) {
     String defaultLogLevel = "info";
-    String defaultFormat = "^\\[[0-9]{4}-[0-1][0-9]-[0-3][0-9]\\s[0-2][0-9]:[0-5][0-9]:[0-5][0-9]\\]\\[(DEBUG|INFO|ERROR|TRACE|WARN)\\]\\sMessage:\\s\\[.*\\]\\n$";
+    String defaultFormat = "^\\[[0-9]{4}-[0-1][0-9]-[0-3][0-9]\\s[0-2][0-9]:[0-5][0-9]:[0-5][0-9]\\]\\[(DEBUG|INFO|ERROR|TRACE|WARN)\\]\\[.*\\]\\n$";
     try (Reader reader = new FileReader(path)) {
       Properties prop = new Properties();
       prop.load(reader);
