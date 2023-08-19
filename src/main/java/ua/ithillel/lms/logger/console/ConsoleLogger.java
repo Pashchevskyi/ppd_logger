@@ -8,7 +8,7 @@ import ua.ithillel.lms.logger.LoggerConfiguration;
 public class ConsoleLogger extends Logger {
 
 
-  public ConsoleLogger(LoggerConfiguration lc) {
+  public ConsoleLogger(ConsoleLoggerConfiguration lc) {
     super(lc);
   }
 
